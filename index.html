@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>円周率πの計算</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 上部：タイトル＋概要 -->
+  <header class="page-header">
+    <h1>コンピュータによる円周率πの計算</h1>
+    <p class="page-description">
+      モンテカルロ法を用いて円周率を計算する。
+    </p>
+  </header>
+
+  <!-- 下部：2段組 -->
+  <main class="content">
+     <!-- 左側：説明 -->
+    <section class="left-panel">
+      <h2>円周率を求める方法</h2>
+      <p>
+       　　円周率πを計算するためには種々の方法があるが、今回はモンテカルロ法を用いて計算する。
+         この方法は、大量の乱数を発生させ計算が困難な課題を解決できる手法である。<br>
+      　 　縦x横の長さが1x1の正方形に半径1の円弧を描き、正方形全面に乱数を発生させる。
+         このとき円弧内に発生した乱数の数と乱数の総数の比率から円周率πの近似値を求める。<br>
+         この時の計算方法は次のとおり、<br>
+      <center><img src="eq01.png"></center>
+       式を変形すると<br>
+      <center><img src="eq02.png"></center>
+      この式を用いて円周率πの近似値をシミュレータで求める。<br>
+    </section>
+
+    <!-- 右側：タイトル + 説明 + Canvas -->
+    <section class="right-panel">
+      <h2>シミュレーション</h2>
+      <p class="figure-description">
+        <!-- 注　乱数の発生間隔は500ms。-->
+      </p>
+		<div class="padl">次のテキストボックスに乱数の数を入力する。</div><br>
+		<div class="padl">乱数の数:
+        <input type="text" id="text01" size="7" value="">
+        <button id="button"> 実　行 </button>
+        <button id="cls"> リセット </button>
+		</div><br>
+		<div class="padl" id="title"></div>
+		<div id="container">
+		  <!-- layerの設定 -->
+        <canvas class="r_canvas" id="canvasBase" width="560" height="560"></canvas>
+        <canvas class="r_canvas" id="canvasDot" width="560" height="560"></canvas>
+      </div>
+		<script type="text/javascript" src="script.js" ></script>
+
+    </section>
+
+  </main>
+
+</body>
+</html>
